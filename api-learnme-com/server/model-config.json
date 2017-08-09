@@ -34,5 +34,37 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "course": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Category": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Skill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "id": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Comment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Favorite": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Setting": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Profile": {
+    "dataSource": "db",
+    "public": true
   }
 }
