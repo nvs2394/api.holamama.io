@@ -1,0 +1,16 @@
+{
+  "app": {
+    "port": "3000",
+    "name": "holamama",
+    "logLevel": "info",
+    "apiRoot": "/api/v1",
+    "jwtSecret": "4452154736"
+  },
+  "db": {
+    "host": "localhost",
+    "name": "holamama",
+    "port": "27017",
+    "username": "holamamauser",
+    "password": "F1tbar1234"
+  }
+}
