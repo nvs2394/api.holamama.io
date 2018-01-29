@@ -1,6 +1,6 @@
 'use strict'
 const Config = require('config')
-const { userValidations, productValidations } = require('../validations')
+const { userValidations } = require('../validations')
 const userHandler = require('../handlers/user')
 const productHandler = require('../handlers/product')
 
@@ -16,7 +16,7 @@ routes.push({
   method: 'GET',
   handler: userHandler.getProfileByToken,
   config: {
-    tags: ['api', 'USER'],
+    tags: ['api', 'user'],
     auth: {
       strategy: 'jwt'
     }
@@ -31,27 +31,11 @@ routes.push({
   method: 'PUT',
   handler: userHandler.updateCompanyInfo,
   config: {
-    tags: ['api', 'USER'],
+    tags: ['api', 'user'],
     auth: {
       strategy: 'jwt'
     },
     validate: userValidations.updateCompanyInfo
-  }
-})
-
-/**
- *POST Add new product
- */
-routes.push({
-  path: API_PATH + '/users/products',
-  method: 'POST',
-  handler: productHandler.newProduct,
-  config: {
-    tags: ['api', 'USER'],
-    auth: {
-      strategy: 'jwt'
-    },
-    validate: productValidations.newProduct
   }
 })
 
@@ -63,7 +47,7 @@ routes.push({
   method: 'GET',
   handler: productHandler.getAllProductByUserId,
   config: {
-    tags: ['api', 'USER'],
+    tags: ['api', 'user'],
     auth: {
       strategy: 'jwt'
     }

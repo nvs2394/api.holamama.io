@@ -11,9 +11,20 @@ const InvoiceSchema = new Schema({
     type: ObjectId,
     ref: 'InvoiceTemplate'
   },
-  orderId: {
-    type: ObjectId,
-    ref: 'Order'
+  products: [{
+    productId: {
+      type: ObjectId,
+      ref: 'Product'
+    },
+    quantity: {
+      type: Number,
+      default: 0
+    },
+    _id: false
+  }],
+  discount: {
+    type: Number,
+    default: 0
   },
   status: {
     type: Boolean,

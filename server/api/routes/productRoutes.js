@@ -12,10 +12,10 @@ const routes = []
  */
 routes.push({
   path: API_PATH + '/product',
-  method: 'PUT',
+  method: 'POST',
   handler: productHandler.newProduct,
   config: {
-    tags: ['api', 'USER'],
+    tags: ['api', 'product'],
     auth: {
       strategy: 'jwt'
     },

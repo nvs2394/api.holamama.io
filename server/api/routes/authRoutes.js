@@ -15,7 +15,7 @@ routes.push({
   method: 'GET',
   handler: authHandler.facebookSignin,
   config: {
-    tags: ['api', 'AUTH'],
+    tags: ['api', 'auth'],
     validate: authValidations.logIn,
     plugins: {
       'hapi-swagger': {

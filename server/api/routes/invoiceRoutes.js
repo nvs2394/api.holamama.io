@@ -10,17 +10,17 @@ const routes = []
 /**
  *GET Get all invoices
  */
-routes.push({
-  path: API_PATH + '/invoices',
-  method: 'GET',
-  handler: invoiceHandler.getInvoicestByUserId,
-  config: {
-    tags: ['api', 'USER'],
-    auth: {
-      strategy: 'jwt'
-    }
-  }
-})
+// routes.push({
+//   path: API_PATH + '/invoices',
+//   method: 'GET',
+//   handler: invoiceHandler.getInvoicestByUserId,
+//   config: {
+//     tags: ['api', 'invoice'],
+//     auth: {
+//       strategy: 'jwt'
+//     }
+//   }
+// })
 
 /**
  *POST Creat new invoice
@@ -30,7 +30,7 @@ routes.push({
   method: 'POST',
   handler: invoiceHandler.createInvoice,
   config: {
-    tags: ['api', 'USER'],
+    tags: ['api', 'invoice'],
     auth: {
       strategy: 'jwt'
     },

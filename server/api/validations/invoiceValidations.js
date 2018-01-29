@@ -12,7 +12,13 @@ const invoiceValidations = {
     payload: {
       clientId: joi.string().trim().description('Client Id'),
       templateId: joi.string().trim().description('Template Id'),
-      orderId: joi.string().trim().description('Order Id')
+      products: joi.array().items(
+        joi.object({
+          productId: joi.string().trim().description('Product Id'),
+          quantity: joi.number().description('Quantity of this product')
+        })
+      ),
+      discount: joi.number().description('Discount percent')
     },
     options: {
       allowUnknown: true

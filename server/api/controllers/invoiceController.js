@@ -7,13 +7,15 @@ const Constants = require('../../utils/constant')
  * 
  * @param {*} invoice 
  */
-const createInvoice = async (invoice) => {
-  const newInvoice = new Invoice({
-    clientId: invoice.clientId,
-    templateId: invoice.templateId,
-    orderId: invoice.orderId,
-    status: Constants.INVOICE_STATUS.NEW
-  })
+const createInvoice = async ({ userId, clientId, products, templateId }) => {
+  const newInvoice = new Invoice()
+  newInvoice.userId = userId
+  newInvoice.clientId = clientId
+  newInvoice.templateId = templateId
+  newInvoice.status = Constants.INVOICE_STATUS.NEW
+  newInvoice.products = products
+
+  console.log('new Invoice', products)
   try {
     const invoiceSaved = await newInvoice.save()
     return invoiceSaved
