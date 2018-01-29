@@ -47,8 +47,34 @@ const createUser = async (user) => {
   }
 }
 
+/**
+ * 
+ * @param {*} userId 
+ * @param {*} company Object company info
+ */
+const updateCompanyInfo = async (userId, company) => {
+  const { phoneNumber, address, website, email, name = {} } = company
+  try {
+    const companyUpdated = User.findById(userId).exec()
+    companyUpdated.then((user) => {
+      user.company = {
+        phoneNumber: phoneNumber || user.company.phoneNumber,
+        address: address || user.company.address,
+        website: website || user.company.website,
+        email: email || user.company.email,
+        name: name || user.company.name
+      }
+      user.save()
+    })
+    return companyUpdated
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
 module.exports = {
   getUserByUserId,
   createUser,
-  getUserByEmail
+  getUserByEmail,
+  updateCompanyInfo
 }

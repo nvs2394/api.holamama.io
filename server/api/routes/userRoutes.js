@@ -1,19 +1,20 @@
 'use strict'
 const Config = require('config')
-const { userValidations } = require('../validations')
+const { userValidations, productValidations } = require('../validations')
 const userHandler = require('../handlers/user')
+const productHandler = require('../handlers/product')
 
 const API_PATH = Config.get('app.apiRoot')
 
 const routes = []
 
 /**
- *GET /user/profile
+ *GET Get user profile
  */
 routes.push({
-  path: API_PATH + '/user/profile',
+  path: API_PATH + '/users/profiles',
   method: 'GET',
-  handler: userHandler.getProfileByUserId,
+  handler: userHandler.getProfileByToken,
   config: {
     tags: ['api', 'USER'],
     auth: {
@@ -23,12 +24,44 @@ routes.push({
 })
 
 /**
- *GET /user/setting
+ *PUT Update company info
  */
 routes.push({
-  path: API_PATH + '/user/setting',
+  path: API_PATH + '/users/companys',
+  method: 'PUT',
+  handler: userHandler.updateCompanyInfo,
+  config: {
+    tags: ['api', 'USER'],
+    auth: {
+      strategy: 'jwt'
+    },
+    validate: userValidations.updateCompanyInfo
+  }
+})
+
+/**
+ *POST Add new product
+ */
+routes.push({
+  path: API_PATH + '/users/products',
+  method: 'POST',
+  handler: productHandler.newProduct,
+  config: {
+    tags: ['api', 'USER'],
+    auth: {
+      strategy: 'jwt'
+    },
+    validate: productValidations.newProduct
+  }
+})
+
+/**
+ *GET Get all product with userId on access_token
+ */
+routes.push({
+  path: API_PATH + '/users/products',
   method: 'GET',
-  handler: userHandler.getProfileByUserId,
+  handler: productHandler.getAllProductByUserId,
   config: {
     tags: ['api', 'USER'],
     auth: {

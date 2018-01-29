@@ -8,7 +8,6 @@ const { FB_URL } = require('../../utils/constant')
  */
 const fbLoginCtrl = async (accessToken) => {
   const url = `${FB_URL}${accessToken}`
-  console.log('url', url)
 
   const authInfo = await superAgent
     .get(url)
@@ -17,7 +16,7 @@ const fbLoginCtrl = async (accessToken) => {
       return JSON.parse(response.text)
     })
     .catch((ex) => {
-      return ex
+      throw new Error(ex.message)
     })
   return authInfo
 }

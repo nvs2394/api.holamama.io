@@ -7,10 +7,14 @@ const userValidations = {
   /**
    *GET /getUserByUserId
    */
-  getUserByUserId: {
+  updateCompanyInfo: {
     headers: {},
-    params: {
-      id: joi.string().trim().required().description('Id of user you want to fetch')
+    payload: {
+      name: joi.string().trim().description('Name of your company'),
+      phoneNumber: joi.string().trim().description('Phone number of your company'),
+      website: joi.string().trim().description('URL website  of your company'),
+      address: joi.string().trim().description('Address of your company'),
+      email: joi.string().trim().description('Email address of your company')
     },
     options: {
       allowUnknown: true

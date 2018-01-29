@@ -12,8 +12,8 @@ const { genToken, payloadToken } = require('../../../libs/appJwt')
  */
 const facebookSignin = async (request, reply) => {
   const accessToken = request.query.accessToken
-  const authInfo = await fbLoginCtrl(accessToken)
   try {
+    const authInfo = await fbLoginCtrl(accessToken)
     if (authInfo) {
       const userExist = await getUserByEmail(authInfo.email)
       if (userExist) {

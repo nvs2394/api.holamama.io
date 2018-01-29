@@ -1,8 +1,8 @@
 {
   "name": "holamama-api",
   "version": "1.0.0",
-  "description": "API for Wespeak app",
-  "author": "WeSpeakTeam",
+  "description": "API for Holamama",
+  "author": "Holamama",
   "license": "MIT",
   "repository": {
     "type": "git"
