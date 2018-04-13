@@ -25,7 +25,7 @@ const routes = [{
     })
   },
   config: {
-    tags: ['api']
+    tags: ['api', 'app']
   }
 }]
 

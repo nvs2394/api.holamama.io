@@ -9,8 +9,6 @@
   "db": {
     "host": "localhost",
     "name": "holamama",
-    "port": "27017",
-    "username": "holamamauser",
-    "password": "F1tbar1234"
+    "port": "27017"
   }
 }

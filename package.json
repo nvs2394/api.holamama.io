@@ -1,7 +1,7 @@
 {
   "name": "holamama-api",
   "version": "1.0.0",
-  "description": "API for Holamama",
+  "description": "Holamama REST API",
   "author": "Holamama",
   "license": "MIT",
   "repository": {
@@ -30,7 +30,7 @@
     "good-console": "6.4.0",
     "hapi": "16.5.2",
     "hapi-auth-jwt": "^4.0.0",
-    "hapi-swagger": "7.7.1",
+    "hapi-swagger": "^7.7.1",
     "http-status": "1.0.1",
     "inert": "4.2.1",
     "joi": "10.6.0",

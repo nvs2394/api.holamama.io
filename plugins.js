@@ -41,7 +41,9 @@ if (config.util.getEnv('NODE_ENV') === DEVELOPMENT) {
             in: 'header'
           }
         },
-        pathPrefixSize: 4
+        grouping: 'tags',
+        documentationPath: '/docs',
+        basePath: '/api/v1'
       }
     }])
 
